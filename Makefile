@@ -10,7 +10,6 @@ sa.o: naive.cpp
 main.o: naive.cpp
 	g++ -c -o $@ $<
 
-
 .PHONY: clean
 clean:
 	$(RM) naive_main.o naive.o a.out 
