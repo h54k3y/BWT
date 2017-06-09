@@ -1,18 +1,15 @@
 .PHONY: all
 all: a.out 
 
-a.out: naive_main.o naive.o
+a.out: main.o naive.o BWT.o
 	g++ -o $@ $^
 
-sa.o: naive.cpp
-	g++ -c -o $@ $<
-
-main.o: naive.cpp
+main.o: main.cpp naive.cpp BWT.cpp
 	g++ -c -o $@ $<
 
 .PHONY: clean
 clean:
-	$(RM) naive_main.o naive.o a.out 
+	$(RM) main.o naive.o BWT.o a.out 
 
 naive.o: naive.hpp
-naive_main.o: naive.hpp
+main.o: naive.hpp
