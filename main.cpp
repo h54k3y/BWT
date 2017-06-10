@@ -34,13 +34,15 @@ int main(){
 		cout<<"Start BWT"<<endl;
 		string text;
 		string encoded_text;
+		string decoded_text;
 		cout<<"input text"<<endl;
 		cin>>text;
-		cout<<"encode text"<<endl;
+		cout<<"encoded text"<<endl;
 		BWT_encode(text,encoded_text);
 		cout<<encoded_text<<endl;
-		cout<<"decode text"<<endl;
-		//BWT_decode();
+		BWT_decode(encoded_text,decoded_text);
+		cout<<"decoded text"<<endl;
+		cout<<decoded_text<<endl;
 	}
 	return 0;
 }

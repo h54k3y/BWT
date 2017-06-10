@@ -14,6 +14,22 @@ int BWT_encode(const string text,string &encoded_text){
 	}
 	return 0;
 }
-int BWT_decode(){
+int BWT_decode(const string encoded_text, string &decoded_text){
+	int encoded_size=encoded_text.size();
+	int alpha[26];
+	int pos;
+	vector<pair <char,int> > F(encoded_size);
+	string L=encoded_text;
+	for(int i=0;i<encoded_size;i++){
+		if(encoded_text[i]=='$'){
+			pos=i;
+		}
+		F[i]=make_pair(encoded_text[i],i);
+	}
+	sort(F.begin(),F.end());
+	for(int i=0;i<encoded_size-1;i++){
+		decoded_text+=F[pos].first;
+		pos=F[pos].second;
+	}
 	return 0;
 }
